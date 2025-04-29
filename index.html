@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EDM PORTFOLIO OF JUSTIN FRANCIA</title>
+  <title>Midterm Task 1: Data Cleaning & Preparation</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
@@ -16,9 +16,10 @@
       color: #f5f5f5;
       overflow-x: hidden;
       position: relative;
+      font-size: 1.1em;
+      line-height: 1.6;
     }
 
-    /* Particle Background */
     #particles-js {
       position: absolute;
       top: 0;
@@ -28,55 +29,63 @@
       z-index: -1;
     }
 
-    header, section, footer {
-      padding: 60px 20px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s forwards;
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      margin: 40px auto;
+      padding: 40px;
+      width: 90%;
+      max-width: 1000px;
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
+      text-align: left;
     }
-
-    header { animation-delay: 0.2s; }
-    #about { animation-delay: 0.5s; }
-    #projects { animation-delay: 0.6s; }
-    #contact { animation-delay: 0.8s; }
-    footer { animation-delay: 1s; }
 
     h1 {
-      font-size: 4.5em;
       font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-      margin-bottom: 10px;
       color: #00ff99;
+      margin-top: 20px;
+      font-size: 3.5em;
+      text-align: center;
       text-shadow: 0px 0px 10px rgba(0, 255, 153, 0.7);
     }
-    
-    h2 {
-      font-size: 2.5em;
+
+    h2, h3 {
       font-family: 'Orbitron', sans-serif;
-      margin-bottom: 20px;
+      color: #00ff99;
+      margin-top: 20px;
     }
 
-    .typing {
-      font-size: 1.5em;
-      color: #00ff99;
-      height: 30px;
-      margin-bottom: 30px;
-      font-family: 'Roboto Mono', monospace;
+    p, li {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.2);
     }
 
     .btn {
       display: inline-block;
+      margin-top: 30px;
+      margin-right: 10px;
       padding: 12px 30px;
       background: #00ff99;
       color: #000;
-      border: none;
-      border-radius: 5px;
       text-decoration: none;
+      font-weight: bold;
       font-size: 1em;
-      font-family: 'Poppins', sans-serif;
+      border-radius: 5px;
       box-shadow: 0 0 10px #00ff99;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     .btn:hover {
@@ -84,74 +93,13 @@
       box-shadow: 0 0 15px #00cc7a;
     }
 
-    footer {
-      font-size: 0.8em;
-      color: #777;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li a {
-      color: #00ff99;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    ul li a:hover {
-      text-decoration: underline;
-      color: #00cc7a;
-    }
-
-    section {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      margin: 20px auto;
-      padding: 40px;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 0 20px rgba(0, 255, 153, 0.1);
-    }
-
-    header {
-      position: relative;
-      background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-      border-radius: 10px;
-      padding: 80px 20px;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .icon {
-      font-size: 1.8em;
-      margin-right: 10px;
-    }
-
-    #projects, #about, #contact {
-      position: relative;
-    }
-
-    /* Style for images */
-    .project-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
-    }
-
     @media (max-width: 600px) {
-      h1 { font-size: 3em; }
-      .typing { font-size: 1.2em; }
+      section {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.2em;
+      }
     }
   </style>
 </head>
@@ -160,16 +108,12 @@
   <!-- Particle Background -->
   <div id="particles-js"></div>
 
-  <header>
-    <h1>EDM PORTFOLIO OF JUSTIN FRANCIA</h1>
-    <div class="typing" id="typing"></div>
-  </header>
+  <section>
+    <h1>Midterm-Task-1: Data Cleaning and Preparation using Excel</h1>
 
-  <section id="projects">
-    <h2><span class="icon">💻</span>Midterm-Task-1: Data Cleaning and Preparation using Excel</h2>
+    <h2>Step-by-Step Process</h2>
 
-    <h3>Step by Step Process</h3>
-    <h4>Step 1:</h4>
+    <h3>Step 1:</h3>
     <ul>
       <li>Load the raw file</li>
       <li>Fix columns width and height</li>
@@ -178,93 +122,47 @@
       <li>Remove Duplicates</li>
     </ul>
 
-    <h4>Step 2:</h4>
+    <h3>Step 2:</h3>
     <ul>
       <li>Performed 1NF</li>
-      <li>Performed Tablet split using 2NF</li>
+      <li>Performed table split using 2NF</li>
       <li>Performed 2NF</li>
       <li>Mapped the normalization as a physical data model</li>
     </ul>
 
-    <h4>Step 3:</h4>
-    <p>Here's the screenshot of my output before I started data cleaning:</p>
-    <img src="https://github.com/user-attachments/assets/590105e1-0d8a-41ba-93f9-4249425d1acc" alt="Before Data Cleaning" class="project-image"/>
+    <h3>Step 3: Before Data Cleaning</h3>
+    <img src="https://github.com/user-attachments/assets/590105e1-0d8a-41ba-93f9-4249425d1acc" alt="Before Data Cleaning Screenshot">
 
-    <h4>Step 4:</h4>
-    <p>Here's the screenshot of my output after I started data cleaning:</p>
-    <img src="https://github.com/user-attachments/assets/b18b5c6f-d574-4d19-9b9f-5e967ab49915" alt="After Data Cleaning" class="project-image"/>
+    <h3>Step 4: After Data Cleaning</h3>
+    <img src="https://github.com/user-attachments/assets/b18b5c6f-d574-4d19-9b9f-5e967ab49915" alt="After Data Cleaning Screenshot">
 
-    <h3>Here's The Physical Model</h3>
-    <img src="https://github.com/user-attachments/assets/b20e8149-24a1-4bc6-b92a-bd4d7cf81fce" alt="Physical Data Model" class="project-image"/>
+    <h2>Physical Model</h2>
+    <img src="https://github.com/user-attachments/assets/b20e8149-24a1-4bc6-b92a-bd4d7cf81fce" alt="Physical Model Diagram">
 
-    <p><a href="https://tatinzzz.github.io/EDM-Portfolio/" class="btn">BACK TO PORTFOLIO</a></p>
+    <a href="https://tatinzzz.github.io/EDM-Portfolio/" class="btn">BACK TO PORTFOLIO</a>
+    <a href="https://github.com/tatinzzz/Midterm-Task-1" class="btn" target="_blank">VIEW ON GITHUB</a>
   </section>
 
-  <footer>
-    <p>© 2025 Justin Francia. All rights reserved.</p>
-  </footer>
-
-  <!-- Load particles.js library -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
   <script>
-    // Initialize particles.js
     particlesJS('particles-js', {
       "particles": {
-        "number": {
-          "value": 100,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#00ff99"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
-          },
-          "polygon": {
-            "nb_sides": 5
-          },
-          "image": {
-            "src": "",
-            "width": 100,
-            "height": 100
-          }
-        },
-        "opacity": {
-          "value": 0.5,
-          "random": false,
-          "anim": {
-            "enable": true,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-          }
-        },
-        "size": {
-          "value": 3,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 2,
-            "size_min": 0.1,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#00ff99",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 3,
-          "direction": "none",
-          "
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#00ff99" },
+        "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" } },
+        "opacity": { "value": 0.5, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1 } },
+        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1 } },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00ff99", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 3, "direction": "none", "out_mode": "out" }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
