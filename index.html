@@ -140,6 +140,15 @@
       position: relative;
     }
 
+    /* Style for images */
+    .project-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+    }
+
     @media (max-width: 600px) {
       h1 { font-size: 3em; }
       .typing { font-size: 1.2em; }
@@ -179,14 +188,14 @@
 
     <h4>Step 3:</h4>
     <p>Here's the screenshot of my output before I started data cleaning:</p>
-    <img src="https://github.com/user-attachments/assets/590105e1-0d8a-41ba-93f9-4249425d1acc" alt="Before Data Cleaning"/>
+    <img src="https://github.com/user-attachments/assets/590105e1-0d8a-41ba-93f9-4249425d1acc" alt="Before Data Cleaning" class="project-image"/>
 
     <h4>Step 4:</h4>
     <p>Here's the screenshot of my output after I started data cleaning:</p>
-    <img src="https://github.com/user-attachments/assets/b18b5c6f-d574-4d19-9b9f-5e967ab49915" alt="After Data Cleaning"/>
+    <img src="https://github.com/user-attachments/assets/b18b5c6f-d574-4d19-9b9f-5e967ab49915" alt="After Data Cleaning" class="project-image"/>
 
     <h3>Here's The Physical Model</h3>
-    <img src="https://github.com/user-attachments/assets/b20e8149-24a1-4bc6-b92a-bd4d7cf81fce" alt="Physical Data Model"/>
+    <img src="https://github.com/user-attachments/assets/b20e8149-24a1-4bc6-b92a-bd4d7cf81fce" alt="Physical Data Model" class="project-image"/>
 
     <p><a href="https://tatinzzz.github.io/EDM-Portfolio/" class="btn">BACK TO PORTFOLIO</a></p>
   </section>
@@ -258,51 +267,4 @@
           "enable": true,
           "speed": 3,
           "direction": "none",
-          "random": false,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-          }
-        }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          }
-        }
-      }
-    });
-
-    const texts = ["Creator", "Producer", "Dreamer"];
-    let count = 0;
-    let index = 0;
-    let currentText = '';
-    let letter = '';
-    (function type() {
-      if (count === texts.length) count = 0;
-      currentText = texts[count];
-      letter = currentText.slice(0, ++index);
-      document.getElementById('typing').textContent = letter;
-      if (letter.length === currentText.length) {
-        count++;
-        index = 0;
-        setTimeout(type, 1500);
-      } else {
-        setTimeout(type, 120);
-      }
-    })();
-  </script>
-
-</body>
-</html>
+          "
